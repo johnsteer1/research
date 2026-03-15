@@ -1,0 +1,33 @@
+{
+  "topic": "ios-app-development",
+  "created": "2026-03-15T16:28:36Z",
+  "last_updated": "2026-03-15T16:39:41Z",
+  "current_hypothesis": "The indie iOS AI dev meta in 2026: Claude Sonnet 4 via Xcode 26.3 MCP (or SweetPad+Claude Code) for code gen, Google Stitch+Figma+Builder.io for design, SwiftUI-first iOS 16+, RevenueCat subscriptions at $2.99-9.99/mo, Foundation Models for free on-device AI differentiation. Bottleneck is distribution/ASO not building. Portfolio of niche apps is the most reliable path to $5-25k MRR.",
+  "open_questions": [
+    "What specific ASO tactics move the needle most for new apps with zero reviews?",
+    "Which AI-wrapper iOS apps survived Apple review and grew sustainably?",
+    "What is the realistic churn rate for niche utility subscription apps?"
+  ],
+  "tried": [
+    "web_search: AI tools + speed + vibe coding + iOS 2025-2026",
+    "web_search: indie iOS developer success stories + revenue 2025",
+    "web_search: App Store monetization best practices 2025-2026",
+    "web_search: iOS app side hustle niches 2025-2026",
+    "web_search: vibe coding iOS Cursor Xcode rapid prototyping",
+    "web_search: indie iOS communities Reddit Twitter YouTube newsletter",
+    "web_search: indie iOS revenue benchmarks 2025",
+    "web_search: Marc Lou Pieter Levels iOS revenue 2025",
+    "web_search: HN indie developer side project revenue 2025",
+    "web_search: App Store subscription vs one-time purchase conversion data 2025",
+    "web_search: Replit mobile iOS vibe coding App Store 2025",
+    "web_fetch: multiple pages including Indie Hackers, Medium, Cult of Mac, Sebastian Roehl substack, RevenueCat"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Deep dive ASO tactics for zero-review apps",
+    "Research Apple review AI-wrapper policies",
+    "Investigate Foundation Models framework integration patterns for app differentiation",
+    "Profile twostraws swift-agent-skills repo for agent setup",
+    "Research XcodeBuildMCP setup documentation"
+  ]
+}

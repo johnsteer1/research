@@ -1,0 +1,1 @@
+- [user_ios_dev_context.md](user_ios_dev_context.md) — User getting MacBook for iOS side hustle, AI-assisted dev focus
