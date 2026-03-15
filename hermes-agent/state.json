@@ -1,0 +1,24 @@
+{
+  "topic": "hermes-agent",
+  "created": "2026-03-15T15:40:07Z",
+  "last_updated": "2026-03-15T16:07:39Z",
+  "current_hypothesis": "Hermes-agent is differentiated by autonomous persistent skill creation, multi-level cross-session memory, multi-platform gateway deployment, and RL/training integration \u2014 a combination not found in any other single framework",
+  "open_questions": [
+    "Real-world production adoption at scale for Hermes?",
+    "How does Hermes skill quality degrade as corpus grows?",
+    "PTC reliability across non-Hermes models?",
+    "OpenClaw ClawHavoc security posture post-incident \u2014 has adoption been materially affected?",
+    "Does OpenAI backing of OpenClaw affect long-term model neutrality?"
+  ],
+  "tried": [
+    "GitHub repo fetch",
+    "Official docs fetch",
+    "Third-party comparison articles",
+    "Release notes review",
+    "OpenClaw deep research: GitHub, docs, ClawHub, comparisons, Wikipedia, Milvus, MindStudio, DEV.to, Medium, Apiyi, oboe.com",
+    "OpenClaw GitHub + docs fetch",
+    "Third-party security incident research"
+  ],
+  "blockers": [],
+  "next_steps": []
+}
