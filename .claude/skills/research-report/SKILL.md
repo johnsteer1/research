@@ -36,11 +36,22 @@ Then generate a markdown report with these sections:
 6. **Next Steps** — planned next actions
 7. **Session Timeline** — one paragraph per session ID summarizing the arc
 
-Optionally save the report:
+Always save the report:
 
 ```bash
 cat > report.md << 'EOF'
 <generated report here>
 EOF
 echo "Saved to report.md"
+```
+
+Then commit and push:
+
+```bash
+TOPIC=$(basename "$PWD")
+cd "$(git rev-parse --show-toplevel)"
+git add -A
+git commit -m "research($TOPIC): report updated [$(date -u +%Y-%m-%dT%H:%M:%SZ)]" --no-gpg-sign 2>/dev/null || \
+git commit -m "research($TOPIC): report updated [$(date -u +%Y-%m-%dT%H:%M:%SZ)]"
+git push &
 ```

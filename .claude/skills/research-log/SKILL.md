@@ -59,3 +59,7 @@ with open('state.json', 'w') as f: json.dump(s, f, indent=2)
 - `tried` — append a brief string per approach attempted (high-level, detail is in the log)
 - `blockers` — replace with current blockers; clear when resolved
 - `next_steps` — replace with current planned actions
+
+## Auto-Report on Session End
+
+When writing a `session_summary` entry, **always** run the `research-report` skill immediately after, unless the user explicitly generated a report already in this session. This ensures a fresh `report.md` is always committed alongside the log.
