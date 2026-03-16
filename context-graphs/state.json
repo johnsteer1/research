@@ -1,0 +1,32 @@
+{
+  "topic": "context-graphs",
+  "created": "2026-03-16T19:30:47Z",
+  "last_updated": "2026-03-16T19:35:00Z",
+  "current_hypothesis": "Context graphs are the emerging infrastructure layer separating production-grade AI agents from demo-quality systems. The key insight: agents need decision traces (why something was allowed to happen) not just data (what happened). GraphRAG + hybrid retrieval + graph-based planning is the dominant technical direction. Context engineering (write/select/compress/isolate) is the discipline. The trillion-dollar opportunity is building systems of record for decisions.",
+  "open_questions": [
+    "How are production teams actually building context graphs? (tooling, schema, maintenance burden)",
+    "What is the practical difference between context graphs and traditional enterprise KGs?",
+    "How does MCP interact with context graph architectures specifically?",
+    "What are the failure modes? (graph staleness, missing traces, schema drift)",
+    "Which startups are building systems-of-record-for-decisions? (competitive landscape)",
+    "Are there published evals comparing context graph vs. flat RAG on agentic (not just QA) tasks?",
+    "How does Anthropic's internal memory/context architecture work for Claude agents?"
+  ],
+  "tried": [
+    "Web search: context graphs AI agents state of the art 2025 2026",
+    "Web search: knowledge graph RAG agent performance optimization top AI labs 2025",
+    "Web search: GraphRAG Microsoft context graph agent architecture techniques 2025",
+    "Web search: Google DeepMind Anthropic OpenAI context graph memory agent system 2025",
+    "Web search: context graph agent performance multi-hop reasoning planning 2025 arxiv",
+    "Web search: Foundation Capital context graphs trillion dollar opportunity",
+    "Web search: production agent context graph implementation techniques 2025 engineering"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Deep dive on key arXiv papers: GAP (2510.25320), GLM (2511.01633), Graphs Meet AI Agents (2506.18019)",
+    "Research startup landscape: who is building context graph / systems-of-decisions infrastructure",
+    "Research MCP + context graph integration patterns",
+    "Research failure modes and operational challenges of graph-based agent memory",
+    "Look for production case studies beyond Microsoft incident management"
+  ]
+}
