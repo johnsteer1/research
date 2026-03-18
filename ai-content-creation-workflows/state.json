@@ -1,0 +1,32 @@
+{
+  "topic": "ai-content-creation-workflows",
+  "created": "2026-03-18T14:26:33Z",
+  "last_updated": "2026-03-18T14:29:54Z",
+  "current_hypothesis": "The AI content creation market in 2026 has a clear professional stack: LLM scripting \u2192 generative image/video models \u2192 voice synthesis \u2192 AI-assisted editing \u2192 automated distribution. Cloud SaaS tools dominate for beginners/SMBs; ComfyUI/n8n orchestration dominates for power users and agencies.",
+  "open_questions": [
+    "How do entertainment studios (Netflix, streamers) actually use AI content creation internally?",
+    "What are the legal/IP risks of using AI-generated content commercially in 2026?",
+    "How does Tavus real-time avatar API compare for sales/personalization at scale?",
+    "What are actual engagement rate differences between AI-generated vs human-created content?"
+  ],
+  "tried": [
+    "web_search: all-in-one platforms (Descript, HeyGen, Synthesia, CapCut, Adobe)",
+    "web_search: avatar/talking head tools (HeyGen, Synthesia, D-ID, Tavus)",
+    "web_search: workflow automation and tool chaining",
+    "web_search: short-form video tools (TikTok/Reels/Shorts)",
+    "web_search: long-form YouTube tools",
+    "web_search: marketing AI (ad creative, A/B testing, personalization)",
+    "web_search: ComfyUI workflow orchestration",
+    "web_search: distribution/scheduling/captioning tools",
+    "web_search: production cost breakdown",
+    "web_search: brand case studies",
+    "web_search: community resources and learning"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Research entertainment/streaming use cases in depth",
+    "Investigate IP/legal landscape for commercial AI content",
+    "Deep-dive Tavus API for personalization at scale",
+    "Research engagement metrics: AI vs human content performance data"
+  ]
+}
