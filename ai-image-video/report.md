@@ -1,327 +1,372 @@
-# AI Image Generation Tools — Research Report
+# AI Video Generation: State of the Field — March 2026
 
 **Topic:** ai-image-video
 **Created:** 2026-03-18
-**Last Updated:** 2026-03-18T14:28:07Z
+**Last Updated:** 2026-03-18
 
 ---
 
 ## Current Hypothesis
 
-For marketing/commercial content in 2026: Adobe Firefly is safest for legal compliance; Midjourney V7 produces highest artistic quality; GPT Image 1 leads on text rendering; Flux 2 is the best open-source option; Ideogram 3.0 dominates typography use cases.
+AI video generation has crossed a quality threshold for short-form marketing content in 2026, with native audio now standard across top tools. The gap between proprietary and open-source models is narrowing fast — particularly with Alibaba's Wan 2.2 reaching native 1080p and Tencent's HunyuanVideo 1.5 available for local deployment.
 
 ---
 
-## Key Findings
+## 1. Top Proprietary Tools
 
-### 1. Top Tools by Category (March 2026)
+### OpenAI Sora 2
+- **Released:** September 2025
+- **Resolution:** Up to 1080p
+- **Video length:** 15–25 seconds (standard: 15s)
+- **Capabilities:** Text-to-video, native synchronized audio, character cameos, Disney licensed character generation (via $1B Disney partnership)
+- **Strengths:** Cinematic physics simulation, strong prompt adherence, commercial rights included
+- **Access:** ChatGPT Plus ($20/mo) or Pro ($200/mo); free tier removed January 10, 2026
+- **API pricing:** $0.10/sec at 720p; $0.30/sec (Sora 2 Pro 720p); $0.50/sec (Sora 2 Pro 1024p)
+- **Typical 10s video cost:** $1–$5
 
-| Tool | Company | Best For |
-|------|---------|----------|
-| Midjourney V7 | Midjourney Inc. | Artistic quality, photorealism, brand imagery |
-| GPT Image 1 / 1.5 | OpenAI | Text rendering, prompt fidelity, API integration |
-| Adobe Firefly | Adobe | Commercial safety, Photoshop/CC workflow integration |
-| Flux 2 (FLUX.2) | Black Forest Labs | Open-source photorealism, production-grade quality |
-| Ideogram 3.0 | Ideogram AI | Typography, posters, signage, marketing assets with text |
-| Stable Diffusion 3.5 | Stability AI | Open-source, customizable, self-hosted fine-tuning |
-| Google Imagen 3 | Google DeepMind | Fast generation, Gemini ecosystem, competitive pricing |
-| Leonardo.ai | Leonardo.ai | Multi-model platform, video generation, design flexibility |
-| DALL-E 3 | OpenAI | Legacy model, still usable; superseded by GPT Image 1 |
+### Google Veo 3.1
+- **Released:** Veo 3 (May 2025); Veo 3.1 update (January 13, 2026)
+- **Resolution:** Native 4K (3840x2160) — first mainstream AI video model at true 4K
+- **Video length:** 8 seconds per generation; Scene Extension enables 60+ second narratives
+- **Capabilities:** Text-to-video, image-to-video (up to 4 reference images), native audio (dialogue, SFX, ambient), vertical 9:16 for Shorts/TikTok
+- **Strengths:** Highest resolution output, character consistency across scenes, "Ingredients to Video" workflow
+- **Access:** Gemini Advanced ($19.99/mo); also via Vertex AI, Google AI Studio, YouTube Shorts, Flow
+- **Notable:** Google DeepMind CEO Demis Hassabis called Veo 3's native audio launch "the end of the silent film era for AI video"
 
----
+### Runway Gen-4.5
+- **Released:** November 2025
+- **Resolution:** 1080p
+- **Capabilities:** Text-to-video, image-to-video with motion brushes, precise multi-element composition
+- **Strengths:** #1 on Artificial Analysis Text-to-Video benchmark; best-in-class scene and character consistency; realistic physics (weight, momentum, collisions)
+- **Pricing:**
+  - Standard: $12/mo (625 credits; ~25 sec of Gen-4.5 video)
+  - Pro: $28/mo (2,250 credits, 4K rendering, priority queue)
+  - Unlimited: $76/mo (explore mode + 2,250 credits)
+  - Enterprise: custom
+- **API:** Gen-4 Turbo ~5 credits/sec; Gen-4.5 ~25 credits/sec
+- **Note:** Gen-4 Turbo offers 5x credit efficiency at slightly lower quality — good for iteration
 
-## Section 2: Pricing Breakdown (as of March 2026)
+### Kling 2.6 (Kuaishou)
+- **Resolution:** 1080p at 30fps, multiple aspect ratios
+- **Video length:** Up to 2 minutes — longest standard generation of any major tool
+- **Capabilities:** Text-to-video, image-to-video, simultaneous audio-visual generation (Dec 2025), bilingual text rendering (English + Chinese), lip-syncing
+- **Strengths:** Best-in-class realistic human faces and body movement; strongest for dialogue/lip-sync content; excellent stylization (anime, Chinese animation, American comics)
+- **Pricing:** Free tier available; paid plans from ~$14.99/mo
+- **Latest:** Kling VIDEO 3.0 Omni supports deep multimodal instruction parsing
 
-### Midjourney
-- **Basic:** $10/month — ~3.3 fast GPU hours, limited relaxed generations
-- **Standard:** $30/month — 15 fast GPU hours, unlimited relaxed
-- **Pro:** $60/month — 30 fast GPU hours, Stealth Mode (private images)
-- **Mega:** $120/month — unlimited relaxed generations
-- Annual discount: 20% off all plans
-- No free tier (free trial was discontinued in 2023)
-- V7 is the current default (set June 2025); use `--v 7` in prompts
+### Luma Ray3 (Luma AI)
+- **Resolution:** 4K HDR (Hi-Fi Diffusion technology); 1080p standard
+- **Capabilities:** Text-to-video, image-to-video, photorealistic natural motion
+- **Strengths:** Production-ready 4K HDR output; superior natural physics (dust, fabric, gravity); ACES workflow compatible (4K EXR export)
+- **Pricing:**
+  - Lite: $7.99/mo
+  - Plus: $20.99/mo
+  - Unlimited: $66.49/mo
 
-### OpenAI (GPT Image 1 & DALL-E 3)
-GPT Image 1 has replaced DALL-E 3 as the primary model. DALL-E 3 remains available as a "previous generation" model.
+### Pika 2.5 (Pika Labs)
+- **Resolution:** 1080p
+- **Average render time:** ~42 seconds
+- **Capabilities:** Text-to-video, image-to-video, avatar lip-syncing, Pikaswaps (object replacement), Pikaffects (stylized effects), Pikaframes (1–10s keyframe transitions)
+- **Strengths:** Most accessible and intuitive UI; best for rapid social media iteration; timeline + layer editor for multi-clip projects
+- **Pricing:** From $8/mo (free tier with watermarks and limits)
 
-| Model | Quality | Price per image |
-|-------|---------|-----------------|
-| GPT Image 1 | High | $0.167 |
-| GPT Image 1 | Medium | $0.04 |
-| GPT Image 1 | Low | $0.01 |
-| GPT Image 1 Mini | High | $0.036 |
-| GPT Image 1 Mini | Low | $0.005 |
-| DALL-E 3 | Standard/HD | $0.04–$0.12 |
+### Hailuo 2.3 (MiniMax)
+- **Video length:** 10 seconds
+- **Capabilities:** Text-to-video, near-photorealistic rendering
+- **Strengths:** Best cost-effectiveness in its class; excellent physical realism, lighting, and shadows; supports anime, illustration, ink painting, game CG styles; strong micro-expression detail
+- **Pricing:** ~$14.99/mo
 
-- New API users receive $5 in free credits
-- Full commercial rights included with API access at no extra cost
-- Resolutions: 1024×1024, 1024×1536, 1536×1024
-
-### Adobe Firefly
-- **Free:** $0/month — limited monthly credits
-- **Standard:** $9.99/month — 2,000 premium credits
-- **Pro:** $19.99/month — 4,000 premium credits
-- **Premium:** $199.99/month — 50,000 premium credits
-- Enterprise plans include indemnification against copyright claims
-- Commercial use permitted on all non-beta, paid-tier outputs
-- Integrates natively into Photoshop, Illustrator, Premiere Pro
-
-### Stable Diffusion 3.5 (via Stability AI API)
-- Credits: $10 per 1,000 credits; new accounts get 25–200 free credits
-- **SD 3.5 Large** (8B params): 6.5 credits/image (~$0.065)
-- **SD 3.5 Medium:** 3.5 credits/image (~$0.035)
-- **Stable Image Ultra** (SD 3.5 based): 8 credits/image (~$0.08)
-- **SD Turbo:** 4 credits/image (~$0.04)
-- Open-weight checkpoints free to download and self-host; only API access costs credits
-- Full ComfyUI integration available
-
-### Flux / FLUX.1 (Black Forest Labs)
-- **FLUX.1 [schnell]:** Open-weight, Apache 2.0 license — free to self-host
-- **FLUX.1 [dev]:** Open-weight, non-commercial license — free to self-host for research
-- **FLUX.1 [pro] / FLUX.2 [pro]:** API access via Black Forest Labs API and third-party providers (fal.ai, Replicate, etc.) — pricing varies, roughly $0.04–$0.09/image
-- FLUX.2 [dev] is a 32B open-weight model released November 2025
-
-### Google Imagen 3
-- **Gemini API:** $0.03 per image
-- Free access via ImageFX and Gemini web interface (usage limits apply)
-- Available on Google AI Studio with free tier
-- Also accessible via Vertex AI (enterprise pricing)
-
-### Ideogram
-- **Free:** limited generations
-- **Plus:** $20/month — 1,000 priority credits
-- **Pro:** $60/month — 3,500 priority credits, batch generation
-- **Teams:** $30/user/month — 1,500 priority credits/user
-
-### Leonardo.ai
-- **Free:** limited tokens
-- **Apprentice:** $10/month (annual) — 8,500 fast tokens/month
-- **Artisan:** $24/month (annual) — more tokens, advanced features
-- Uses a token system; video generation (Veo 3 integration) consumes tokens rapidly
-- Includes custom model training, Alchemy enhancement, Unified Canvas
+### Seedance 2.0 (ByteDance) — New in 2026
+- **Released:** February 10, 2026
+- **Resolution:** 480p–2K at up to 60fps; six aspect ratios (16:9, 9:16, 4:3, 3:4, 21:9, 1:1)
+- **Video length:** 4–15 seconds per clip
+- **Architecture:** Dual-Branch Diffusion Transformer; accepts up to 12 simultaneous reference inputs across text, image, audio, and video modalities
+- **Capabilities:** Native audio-video joint generation, director-level camera control, lip-sync in 8+ languages, multi-shot generation
+- **Pricing:** ~$0.14/sec for pure video generation; consumer plans via Dreamina from ~$9.60/mo; BytePlus for international API access
+- **Status:** Global API launch paused as of March 15, 2026 due to copyright disputes and content safety compliance; available via third-party aggregators
+- **Controversy:** CNN/TechCrunch report Hollywood studios alarmed; described as output that "spooked Hollywood"
 
 ---
 
-## Section 3: Open-Source Options
+## 2. Pricing Summary Table
 
-### FLUX.1 / FLUX.2 — Black Forest Labs
-- **FLUX.1 [schnell]:** 12B parameter rectified flow transformer; Apache 2.0 (free commercial use); generates in 1–4 steps
-- **FLUX.1 [dev]:** 12B params; non-commercial license; guidance-distilled for efficiency
-- **FLUX.1 Tools:** Fill (inpainting/outpainting), Depth, Canny, Redux (image variations)
-- **FLUX.2 [dev]:** 32B model (November 2025); production-grade; improved anatomy, skin texture, lighting, complex compositions
-- Black Forest Labs founded by former Stability AI researchers
-- Video model (codename "SOTA") in development
+| Tool | Free Tier | Entry Paid | Mid | Top/API |
+|------|-----------|------------|-----|---------|
+| Sora 2 | No (removed Jan 2026) | $20/mo (Plus) | — | $200/mo Pro; $0.10–$0.50/sec API |
+| Veo 3.1 | Limited (AI Studio) | $19.99/mo | — | Vertex AI enterprise |
+| Runway Gen-4.5 | Yes (watermarked) | $12/mo | $28/mo | $76/mo unlimited |
+| Kling 2.6 | Yes | ~$14.99/mo | — | API via partners |
+| Luma Ray3 | Yes | $7.99/mo | $20.99/mo | $66.49/mo |
+| Pika 2.5 | Yes (watermarked) | $8/mo | $35/mo | Enterprise |
+| Hailuo 2.3 | Limited | $14.99/mo | — | API via fal.ai |
+| Seedance 2.0 | No | ~$9.60/mo | — | $0.14/sec API |
 
-### Stable Diffusion 3.5 — Stability AI
-- Available in: Medium, Large (8B), and Turbo variants
-- Improved text rendering within images vs. SDXL
-- Replaces SD Cascade and SDXL as the Stability AI flagship
-- Weights available on Hugging Face; free to self-host
-- ComfyUI native support available
-
-### SDXL (Stable Diffusion XL)
-- Still the most widely used open-source image model by ecosystem size
-- Deepest library of LoRAs, community checkpoints, and fine-tunes
-- Technically superseded by SD 3.5 and Flux, but remains dominant in community workflows
-
-### Other notable open-source options
-- **DeepFloyd IF:** Multi-stage diffusion model with strong text rendering
-- **StyleGAN variants:** Specialized for face/portrait generation
+**API economics rule of thumb:** Direct API billing becomes cost-effective above ~200 videos/month; below that volume, subscriptions with credit pools offer better per-video economics.
 
 ---
 
-## Section 4: Quality Comparison
+## 3. Open Source Models
 
-Based on the LM Arena Image Generation Leaderboard (December 2025, Elo-based human preference ranking):
+### Wan 2.2 (Alibaba) — Top Open Source Pick
+- **Released:** July 28, 2025 (Wan 2.1 open-sourced February 2025)
+- **Architecture:** Mixture-of-Experts (MoE), ~10B parameters (down from 14B in Wan 2.1); trained on 1.5B videos + 10B images
+- **Resolution:** Native 1080p (no upscaling required); 480P and 720P also available
+- **VRAM:** 8.19GB minimum (T2V-1.3B variant); runs on consumer GPUs
+- **Capabilities:** Text-to-video, image-to-video, video editing, video-to-audio, bilingual text in video, VACE 2.0 (camera trajectory control, subject locking, background stabilization)
+- **VBench score:** 84.7%+
+- **License:** Apache 2.0
+- **Access:** Run locally via ComfyUI; cloud via Hugging Face, Replicate
 
-| Rank | Model | Elo Score | Strength |
-|------|-------|-----------|----------|
-| 1 | Flux 2 Pro v1.1 | ~1,265 | Photorealism — professional photography aesthetic |
-| 2 | GPT Image 1.5 | ~1,264 | Text rendering, prompt adherence |
-| 3 | Midjourney V7 | — | Artistic coherence, composition, lighting |
-| 4 | Gemini 3 Pro / Imagen 3 | — | Speed (3–5 sec), realism |
-| 5 | Ideogram 3.0 | — | Typography accuracy (~90% vs. Midjourney's ~30%) |
+### HunyuanVideo 1.5 (Tencent)
+- **Architecture:** 8.3B parameters; causal 3D VAE; "dual-stream to single-stream" transformer
+- **VRAM:** 13.6GB for 720p
+- **Generation speed:** ~75 seconds for 480p on RTX 4090
+- **Benchmarks:** 68.5% text alignment, 96.4% visual quality
+- **Variants:** T2V, I2V, Avatar, Custom
+- **License:** Open source; free
+- **Best for:** Research labs, enterprises needing local deployment; structural flexibility
 
-**By use case:**
-- **Photorealism / product photography:** Flux 2 Pro wins by a meaningful margin in 2026
-- **Artistic/editorial imagery:** Midjourney V7 remains the gold standard for composition and aesthetic
-- **Text in images (logos, signage, packaging, posters):** Ideogram 3.0 and GPT Image 1.5 (tied at the top)
-- **Speed:** Gemini 3 Pro (3–5 sec), Flux 2 Flex (2–4 sec), FLUX.1 [schnell] (1–4 steps locally)
-- **Overall prompt adherence:** GPT Image 1.5 and FLUX.2
+### LTX-2 (Lightricks)
+- **Parameters:** 19B (14B video + 5B audio)
+- **Resolution:** Native 4K at 50fps — highest frame rate of any open-source model
+- **Video length:** Up to 20 seconds
+- **Capabilities:** Native synchronized audio
+- **License:** Apache 2.0; free for commercial use under $10M ARR
+- **Training data:** Licensed from Getty Images and Shutterstock (commercial safety advantage)
 
----
+### CogVideoX-5B (Zhipu/Tsinghua University)
+- **Resolution:** 720x480
+- **Video length:** 6 seconds
+- **Capabilities:** Text-to-video, image-to-video
+- **Best for:** Efficiency on moderate hardware; research prototyping
+- **License:** Open source
 
-## Section 5: Prompt Engineering Best Practices (2026)
-
-### Universal Structure
-Use a one-line goal + 4–6 high-signal detail descriptors covering: medium, style, lighting, framing, mood, palette.
-
-**Weak:** `Fox, forest, autumn, misty, sunlight, 8k, best quality`
-**Strong:** `A curious red fox exploring a misty autumn forest at dawn. Golden sunlight filters through colorful leaves, casting dappled shadows on the forest floor`
-
-### Model-Specific Approaches
-- **GPT Image 1 / ChatGPT:** Works best with paragraph-style natural language; supports multi-turn editing
-- **Midjourney V7:** Prefers short, high-signal phrases + reference images; use `--v 7`; personalization models can learn your aesthetic
-- **Stable Diffusion 3.5 / Flux:** Rewards structured, weighted keywords; supports negative prompts
-- **Ideogram:** Supports direct text-in-image instructions; specify exact copy you want rendered
-
-### Photography / Realism Techniques
-- Specify **catchlight** for portraits: `catchlight in eyes`, `light reflecting in eyes` — prevents flat "dead" eyes
-- Camera angles matter: low-angle = heroic/powerful; high-angle = vulnerable/small; Dutch angle = tension
-- Name lighting setups: `Rembrandt lighting`, `golden hour`, `softbox lighting`, `studio lighting with rim light`
-- Reference specific camera/lens combos: `shot on Canon EOS R5, 85mm f/1.4, shallow depth of field`
-
-### Prompt Refinement
-- Test each prompt across 3–5 generations; watch for anatomy errors, hallucinations, off-topic drift
-- Simple prompts typically need 2–3 rounds of iteration
-- For Midjourney: use `--sref` for style references, `--cref` for character consistency across images
-
-### Marketing Asset Tips
-- For brand consistency: use seed numbers (all platforms) and character reference images
-- For ad copy integration: use Ideogram or GPT Image 1.5, specify font style and placement explicitly
-- For product mockups: Flux 2 + depth/reference image for structural accuracy
+### Other Notable Open-Source Models
+- **Mochi 1** (Genmo): Apache 2.0; Asymmetric Diffusion Transformer; strong for commercial integration pipelines
+- **SkyReels V1:** Cinematics-focused
+- **MAGI-1, Waver 1.0:** Emerging models appearing on leaderboards
 
 ---
 
-## Section 6: Commercial Licensing Considerations
+## 4. Key Players / Companies
 
-### Adobe Firefly — Strongest Commercial Protection
-- Trained exclusively on Adobe Stock (licensed), openly licensed content, and public domain
-- Enterprise subscribers get **indemnification** — Adobe protects clients against third-party copyright claims
-- Non-beta outputs may be used commercially under all paid plans
-- Industry trend: enterprise clients increasingly specify Firefly in project requirements
-- More than 40% of professional designers cite copyright ambiguity as a reason to avoid certain AI tools
-
-### OpenAI (GPT Image 1 / DALL-E 3)
-- Full commercial rights included with API access
-- No extra licensing fee for commercial use
-- OpenAI's training data practices have faced scrutiny but no successful infringement actions against users to date
-
-### Midjourney
-- Paid subscribers receive commercial usage rights for generated images
-- No explicit indemnification clause
-- Ongoing lawsuits from artists over training data; legal landscape unsettled
-- Millions of users generate commercial content daily without reported legal issues
-- Stealth Mode (Pro/Mega) keeps images private
-
-### Flux / FLUX.1
-- **[schnell]:** Apache 2.0 — full commercial use, self-hosted free
-- **[dev]:** Non-commercial license only (research/personal)
-- **[pro] via API:** Commercial use permitted per Black Forest Labs API terms
-
-### Stable Diffusion 3.5
-- Stability AI Community License: free for commercial use under $1M annual revenue
-- Enterprise license required above $1M revenue threshold
-- Self-hosted weights: check per-model license on Hugging Face
-
-### Ideogram & Leonardo.ai
-- Both permit commercial use on paid plans
-- Ideogram: outputs on paid tiers are commercially licensable
-- Leonardo.ai: commercial rights on paid plans; check specific model licenses for third-party models hosted on the platform
-
-### Key Risk Summary
-| Tool | Indemnification | Training Data Transparency | Commercial Use |
-|------|----------------|---------------------------|----------------|
-| Adobe Firefly | Yes (enterprise) | High (Adobe Stock + licensed) | Yes (paid plans) |
-| GPT Image 1 | No | Medium | Yes (API) |
-| Midjourney V7 | No | Low (undisclosed) | Yes (paid plans) |
-| Flux [schnell] | No | N/A (open weights) | Yes (Apache 2.0) |
-| SD 3.5 | No | Medium | Yes (<$1M revenue) |
-| Google Imagen 3 | No | Medium | Yes (API terms) |
-| Ideogram 3.0 | No | Medium | Yes (paid plans) |
+| Company | Model(s) | Country | Notes |
+|---------|----------|---------|-------|
+| OpenAI | Sora 2 | USA | Disney partnership for licensed characters |
+| Google DeepMind | Veo 3, Veo 3.1 | USA | Integrated across Gemini, YouTube, Vertex AI |
+| Runway | Gen-4, Gen-4.5 | USA | #1 benchmark; focused on creative professionals |
+| Kuaishou | Kling 2.x, 3.x | China | Longest video length; best lip-sync |
+| Luma AI | Dream Machine, Ray3 | USA | 4K HDR; ACES workflow; photorealism focus |
+| Pika Labs | Pika 2.5 | USA | Consumer-friendly; social media focus |
+| MiniMax | Hailuo 2.x | China | Cost-effectiveness leader |
+| ByteDance | Seedance 2.0 | China | Feb 2026 launch; Hollywood controversy |
+| Alibaba | Wan 2.x | China | Top open-source; 2.2M+ downloads |
+| Tencent | HunyuanVideo | China | Research/enterprise open-source |
+| Lightricks | LTX-2 | Israel | Highest FPS open-source; licensed training data |
+| Zhipu/Tsinghua | CogVideoX | China | Lightweight; academic |
 
 ---
 
-## Section 7: New Developments in Early 2026
+## 5. Quality Comparison
 
-### Major Releases and Updates (Jan–Mar 2026)
-- **Midjourney V7** set as default (June 2025 for context); complete architectural overhaul with video generation capabilities, dedicated web editor, personalization models, image editing mode
-- **GPT Image 1.5** released; currently leads LM Arena Elo at ~1,264; surpasses DALL-E 3 in all benchmarks
-- **FLUX.2** (November 2025): 32B open-weight model by Black Forest Labs; addresses FLUX.1 limitations in anatomy, skin texture, lighting; production-grade quality
-- **Ideogram 3.0** (March 2025): Near-perfect typography accuracy; improved realism beyond text rendering
-- **Gemini 3 Pro Image** (Google DeepMind): Google's 2026 flagship image model for high realism and commercial production; 3–5 second generation times
-- **Leonardo.ai + Canva integration:** Veo 3 model integration for video with sound/dialogue
-- **Gamma Imagine** (announced March 17, 2026): Text-prompt-based brand asset generation (charts, marketing collateral, social graphics) — targeting Canva/Adobe
+### Resolution Leaders
+1. **Veo 3.1** — Native 4K (3840x2160); only mainstream model at true 4K natively
+2. **LTX-2** (open source) — Native 4K at 50fps
+3. **Luma Ray3** — 4K HDR via Hi-Fi Diffusion
+4. **Sora 2 / Runway Gen-4.5 / Kling 2.6** — 1080p standard
 
-### Key Technological Trends in 2026
-1. **4K output as standard** — no longer a premium feature; most top-tier models now output at 4K by default
-2. **Text rendering solved** — readable text in images is now reliable across top models (Ideogram, GPT Image 1.5); removes a major barrier for marketing mockups, packaging, signage
-3. **Real-time knowledge integration** — some 2026 models pull live web data during generation, enabling current-context product visuals
-4. **Speed parity** — fastest models (Flux [schnell], Gemini 3 Pro) generate in 2–5 seconds without significant quality sacrifice
-5. **Video generation convergence** — Black Forest Labs' SOTA model in development; video + image workflows merging in platforms like Leonardo.ai
-6. **Market consolidation** — emphasis on professional-grade capabilities; smaller experimental tools being absorbed or discontinued
+### Video Length Leaders
+1. **Kling 2.6** — Up to 2 minutes
+2. **Veo 3.1 with Scene Extension** — 60+ seconds
+3. **Sora 2** — 25 seconds
+4. **LTX-2** — 20 seconds
+5. **Most others** — 4–15 seconds
+
+### Cinematic Quality / Physics Realism
+1. **Runway Gen-4.5** — #1 Artificial Analysis benchmark; best weight/momentum/collision physics
+2. **Sora 2** — Cinematic quality; strong for complex multi-element scenes
+3. **Luma Ray3** — Natural motion (dust, fabric, gravity); production-ready
+4. **Veo 3.1** — Improved prompt adherence and real-world physics
+
+### Human Movement and Faces
+1. **Kling 2.6** — Best realistic human faces, body movement, expressions, lip-sync
+2. **Hailuo 2.3** — Excellent micro-expressions and character detail
+3. **Sora 2** — Good character consistency; character cameo support
+
+### Audio Integration (Native)
+All top 2026 models include native synchronized audio:
+- Sora 2, Veo 3.1, Kling 2.6, Seedance 2.0, LTX-2 — full native audio-video generation in one pass
+- Runway Gen-4.5 — strong visual output; audio via separate pipeline
+
+### Motion Quality / Consistency
+- **Runway Gen-4.5** — Best scene and character consistency for multi-clip narratives
+- **Kling 2.6** — Smoothest motion; no flickering or distortion issues of earlier generations
+- **Wan 2.2** — Best open-source motion via VACE 2.0 camera controls
 
 ---
 
-## Approaches Tried
+## 6. Text-to-Video vs. Image-to-Video vs. Video-to-Video
 
-- web_search: Midjourney v7 pricing
-- web_search: DALL-E 3 / GPT Image 1 pricing
-- web_search: Stable Diffusion 3.5 / Flux open source status
-- web_search: Adobe Firefly pricing and commercial use
-- web_search: Ideogram and Leonardo.ai pricing
-- web_search: Google Imagen 3 pricing
-- web_search: quality benchmarks 2026
-- web_search: commercial licensing
-- web_search: prompt engineering best practices
-- web_search: 2026 new developments
+### Market Split (2026)
+- Text-to-video: ~65.7% of all generations
+- Image-to-video: ~32.6%
+- Video-to-video: small but growing
+
+### Text-to-Video (T2V)
+- Creates complete video from written description; AI builds everything from scratch
+- Best tools: Runway Gen-4.5 (prompt adherence + physics), Veo 3.1 (4K + audio), Sora 2 (cinematic)
+- Best for: Concept visualization, social ads, explainer content, brand storytelling
+
+### Image-to-Video (I2V)
+- Brings a still image to life with motion; gives precise control over starting visual
+- Best tools: Kling 2.6 (faces/people), Luma Ray3 (photorealistic motion), Wan 2.2 (open source)
+- Best for: Product animation, character animation, bringing brand photography to life
+- Pattern: Experienced creators graduate from T2V to I2V for tighter creative control
+
+### Video-to-Video (V2V)
+- Restyling, enhancing, or extending existing video while preserving motion
+- Best tools: Wan 2.2 VACE 2.0 (editing + camera control), Pika 2.5 (Pikaswaps), Runway
+- Best for: Style transfer, brand consistency retouching, footage enhancement
+
+### Veo 3.1 Multi-Image Reference
+- Accepts up to 4 reference images simultaneously — hybrid T2V/I2V
+- Enables consistent characters and environments across generated scenes
+
+---
+
+## 7. Best Use Cases
+
+### Marketing Ads
+- **Best tools:** Runway Gen-4.5 (character consistency across campaign), Kling 2.6 (human faces/lip-sync for spokesperson ads), Veo 3.1 (4K TV-ready output)
+- **Workflow:** Define character appearance and location once in reference images; generate multiple ad variations maintaining consistency
+- **Key stat:** 42% of marketers producing multiple video ad versions cite audience customization as their top genAI use case; ~40% of all video ads will be built or enhanced with genAI by end of 2026
+- **Platform integration:** Google Ads Video Enhancements auto-generates vertical 9:16 variants from seed assets
+
+### Social Content (TikTok / Shorts / Reels)
+- **Best tools:** Pika 2.5 (fast iteration, timeline editor), Kling 2.6 (native vertical, 2-min length), Veo 3.1 (native 9:16), Hailuo 2.3 (cost-effective at scale)
+- **Key advantage:** Top tools now generate vertical video natively; no crop or reframe needed
+
+### Entertainment / Narrative Content
+- **Best tools:** Sora 2 (cinematic quality, Disney characters), Runway Gen-4.5 (scene consistency for narrative continuity), Veo 3.1 (Scene Extension for 60s+ sequences)
+- **Key advantage:** Character consistency across clips enables genuine narrative filmmaking
+- **Limitation:** Still requires stitching multiple clips; autonomous long-form narrative generation not yet viable
+
+### E-commerce / Product Video
+- **Best tools:** Wan 2.6 (purpose-built for product/catalog), Luma Ray3 (photorealistic product motion), Hailuo 2.3 (cost-effective volume)
+
+### Avatar / Talking Head / Corporate Video
+- **Best tools:** Kling 2.6 (lip-sync, multi-language dialogue), HeyGen (avatar-led corporate; $29/mo), Pika 2.5 (lip-sync feature)
+
+---
+
+## 8. New Developments in Early 2026
+
+### Seedance 2.0 (ByteDance) — February 2026
+- Most significant new entrant of 2026; Hollywood studios publicly alarmed by output quality
+- Unified multimodal architecture: text + image + audio + video inputs simultaneously; up to 12 reference files per request
+- 2K at 60fps; 6 aspect ratios; 8+ language lip-sync
+- ~100x cheaper than Sora 2 at equivalent resolution ($0.05 per 5s clip at 720p via third parties)
+- Global API rollout paused March 15, 2026 due to copyright and content safety disputes
+
+### Veo 3.1 — January 13, 2026
+- First mainstream tool to ship native 4K output
+- Scene Extension technology for 60s+ continuous narratives
+- Native 9:16 vertical video for mobile platforms
+- "Ingredients to Video" multi-image reference workflow
+
+### Sora 2 Access Policy Change — January 10, 2026
+- Free tier eliminated; restricted to Plus ($20/mo) and Pro ($200/mo) subscribers only
+
+### Kling VIDEO 3.0 / 3.0 Omni
+- Deep multimodal instruction parsing; cross-task integration for light and sound
+
+### Audio as Table Stakes
+- By early 2026, native synchronized audio generation is standard across all top proprietary tools
+- Tools generate video + SFX + ambient sound + dialogue in a single pass — a qualitative leap from 2025
+
+### Wan 2.2 (July 2025, consolidated as 2026 open-source leader)
+- MoE architecture; native 1080p; VACE 2.0 camera controls
+- 2.2M+ downloads; definitive open-source choice heading into 2026
+
+---
+
+## 9. Limitations — What AI Video Still Cannot Do Well
+
+### Video Length and Narrative Coherence
+- Most models generate 4–15 seconds per clip; stitching is still required for longer content
+- "Temporal drift" causes scenes to become incoherent after ~10 seconds: characters change appearance, objects disappear, physics breaks down
+- Veo 3.1's Scene Extension and Kling's 2-minute capability are advances, but fully coherent long-form narrative generation remains unsolved
+
+### Human Movement and Anatomy
+- Hands, fingers, and complex body poses remain error-prone across all models
+- Subtle human movement (natural walking gait, fine motor tasks) still appears "off" to trained eyes
+- Faces can distort during rapid motion or extreme angles
+
+### Creative / Directorial Control
+- Precise frame-level control is limited; you cannot reliably specify "camera moves left at second 3, character turns right at second 5"
+- Runway Gen-4.5 and Wan 2.2 VACE 2.0 are the leaders here but it remains a professional frustration
+- Multi-character scenes with complex interactions are inconsistent
+
+### Physics Edge Cases
+- Water, fire, cloth simulation, and smoke are improving but still inconsistent under complex interactions
+- Small object interactions (fingers picking up objects, liquids pouring accurately) are notoriously unreliable
+
+### Text Rendering in Video
+- On-screen text within generated video is still poor — letters morph, text flickers, consistency breaks across frames
+- Kling 2.6 and Wan 2.2 have bilingual text support but it remains limited in reliability
+
+### Resolution vs. Coherence Tradeoff
+- Higher resolution (4K) requires more compute and introduces more artifacts at longer durations
+- Veo 3.1's native 4K is only 8 seconds per clip; extending coherently at 4K is harder
+
+### Compute Cost
+- High-quality generation is expensive: Sora 2 at $0.50/sec means a 30s 1024p clip costs $15
+- Open-source models require GPU infrastructure: HunyuanVideo 1.5 needs 13.6GB VRAM, takes 75s per clip on an RTX 4090
+
+### Intellectual Property and Content Safety
+- Seedance 2.0's Hollywood controversy exemplifies broader issues: likeness reproduction, style replication, and character imitation remain legally unresolved
+- Most proprietary platforms prohibit generating real people without consent; enforcement is inconsistent
+
+### Cross-Session Brand Character Consistency
+- Generating the same character across multiple separate sessions without reference images produces drift
+- Runway Gen-4.5 and Veo 3.1 are best at intra-session consistency, but cross-session brand character control requires careful reference image management workflows
+
+---
+
+## Approaches Tried (This Session)
+
+- web_search: top tools comparison 2026
+- web_search: pricing and API costs
+- web_search: open source models (Wan, HunyuanVideo, CogVideoX)
+- web_search: Sora 2 capabilities and pricing
+- web_search: Veo 3.1 features and January 2026 update
+- web_search: Kling 2.0/2.5/2.6 evolution
+- web_search: Runway Gen-4.5 features and pricing
+- web_search: Hailuo/Pika 2.5/Luma Ray3
+- web_search: AI video limitations 2026
+- web_search: marketing and advertising use cases
+- web_search: Seedance 2.0 ByteDance launch and controversy
+- web_search: Wan 2.1/2.2 specs and architecture
+- web_search: text-to-video vs image-to-video market breakdown
+- web_fetch: pinggy.io comprehensive model overview
+- web_fetch: wavespeed.ai comparison guide
 
 ---
 
 ## Open Questions
 
-1. How does Gemini 3 Pro Image compare in real-world marketing workflows (vs. Midjourney/Firefly)?
-2. What is the pricing trajectory — will API costs keep declining through 2026?
-3. How do video generation tools (Sora, Runway, Kling, SOTA) complement image tools for full marketing content pipelines?
+1. How does Seedance 2.0's global rollout resolve after the copyright pause (as of March 15, 2026)?
+2. Does Veo 3.1's 4K output hold benchmark quality in real-world production workflows vs. synthetic tests?
+3. Which tool wins for consistent brand character identity across a long-form marketing campaign?
 
 ---
 
 ## Next Steps
 
-- Optional: Research video generation tools comparison (Sora, Runway Gen-3, Kling, Leonardo Motion, Pika)
-- Optional: Deep-dive per-tool workflow guides for marketing teams
-- Optional: Benchmark Gemini 3 Pro Image in marketing use cases
+- Benchmark specific tools for a defined marketing ad use case (e.g., 15s product ad at 1080p)
+- Monitor Seedance 2.0 global launch resolution
+- Investigate HeyGen and D-ID for avatar/talking-head corporate video specifically
 
 ---
 
-## Session Timeline
-
-**Session session-20260318 (2026-03-18):** Conducted comprehensive research sweep across all major AI image generation platforms via 10 web searches. Gathered grounded data on pricing, open-source status, quality benchmarks, commercial licensing, prompt engineering best practices, and early 2026 developments. Key finding: the 2026 landscape has matured significantly with clear leaders by use case — Flux 2 for photorealism, Midjourney V7 for artistic quality, GPT Image 1.5 for text rendering, Adobe Firefly for commercial safety, and Ideogram 3.0 for typography. Four convergent trends define 2026: 4K as standard, reliable text in images, real-time knowledge integration, and speed parity across top models.
-
----
-
-## Sources
-
-- [Comparing Midjourney Plans – Midjourney](https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans)
-- [Midjourney Pricing 2026: Plans, Costs & Reddit Verdict](https://www.aitooldiscovery.com/guides/midjourney-pricing)
-- [Midjourney v7 NOT Released Yet: Still v6.1 in Feb 2026 (v7 Alpha Expected April)](https://leaveit2ai.com/ai-tools/image/midjourney)
-- [OpenAI DALL-E & GPT Image Pricing Calculator (Mar 2026)](https://costgoat.com/pricing/openai-images)
-- [OpenAI Image Pricing Calculator 2026 | GPT Image 1.5, GPT Image 1 & DALL-E](https://invertedstone.com/calculators/dall-e-pricing)
-- [Pricing | OpenAI](https://openai.com/api/pricing/)
-- [GPT Image 1 Model | OpenAI API](https://platform.openai.com/docs/models/gpt-image-1)
-- [The Best Open-Source Image Generation Models in 2026](https://www.bentoml.com/blog/a-guide-to-open-source-image-generation-models)
-- [Stable Diffusion 3.5 vs. Flux](https://modal.com/blog/best-text-to-image-model-article)
-- [The 9 Best AI Image Generation Models in 2026](https://www.gradually.ai/en/ai-image-models/)
-- [black-forest-labs/FLUX.1-dev · Hugging Face](https://huggingface.co/black-forest-labs/FLUX.1-dev)
-- [Black Forest Labs - Creators of FLUX Image Generation](https://bfl.ai/)
-- [Compare plans that include generative AI | Adobe Firefly](https://www.adobe.com/products/firefly/plans.html)
-- [Adobe Firefly Pricing 2026: $9.99-$199.99/month | CostBench](https://costbench.com/software/ai-image-generators/adobe-firefly/)
-- [Adobe Generative AI User Guidelines | Adobe Legal](https://www.adobe.com/legal/licenses-terms/adobe-gen-ai-user-guidelines.html)
-- [Ideogram AI Review 2026: Best AI Image Generator for Perfect Text Rendering?](https://pxz.ai/blog/ideogram-ai-review-2026)
-- [Leonardo.Ai Pricing: Individual, Team & API Plans | Leonardo.Ai](https://leonardo.ai/pricing)
-- [AI Image Pricing 2026: Google Gemini vs. OpenAI GPT Cost Analysis | IntuitionLabs](https://intuitionlabs.ai/articles/ai-image-generation-pricing-google-openai)
-- [Imagen 3 arrives in the Gemini API - Google Developers Blog](https://developers.googleblog.com/imagen-3-arrives-in-the-gemini-api/)
-- [Imagen 3 | Generative AI on Vertex AI | Google Cloud Documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-generate)
-- [Best AI Image Generators in 2026: Complete Comparison Guide | WaveSpeedAI](https://wavespeed.ai/blog/posts/best-ai-image-generators-2026/)
-- [Best AI Image Generators (2026): A Honest Test & Review | getimg.ai](https://getimg.ai/blog/best-ai-image-generator)
-- [AI Image Generation API Comparison 2026: Pricing, Quality, and the Best Value Pick](https://blog.laozhang.ai/en/posts/ai-image-generation-api-comparison-2026)
-- [Adobe Firefly vs Midjourney 2026: Which Is Best?](https://pxz.ai/blog/adobe-firefly-vs-midjourney-2026)
-- [Adobe Firefly Indemnification: What It Means and Why It Matters | LicenseOrg](https://www.licenseorg.com/blog/adobe-firefly-indemnification-explained)
-- [Stability AI - Developer Platform](https://platform.stability.ai/pricing)
-- [Stable Diffusion in 2026: Features, Pricing, License, and Alternatives](https://merlio.app/blog/stable-diffusion-features-pricing-license-and-alternatives)
-- [How to write AI image prompts like a pro [2026]](https://letsenhance.io/blog/article/ai-text-prompt-guide/)
-- [The 8 best AI image generators in 2026 | Zapier](https://zapier.com/blog/best-ai-image-generator/)
-- [2026 AI Image Generation Trends: 4K Output and Real-Time Grounding](https://northpennnow.com/news/2026/mar/08/2026-ai-image-generation-trends-why-4k-output-and-real-time-grounding-are-changing-everything-for-creators/)
-- [Gamma adds AI image-generation tools in bid to take on Canva and Adobe | TechCrunch](https://techcrunch.com/2026/03/17/gamma-adds-ai-image-generation-tools-in-bid-to-take-on-canva-and-adobe/)
-- [Best AI Image Generation Tools 2026: DALL-E vs Midjourney vs Stable Diffusion - Gurkha Technology](https://gurkhatech.com/ai-image-generation-tools-2026/)
-- [Best AI Ad Creative Generator: Top 7 Tools 2026 Guide](https://www.cometly.com/post/best-ai-ad-creative-generator)
+*Report generated: 2026-03-18. Sources grounded in web searches across OpenAI, Google DeepMind, Runway, Kuaishou/Kling, Luma AI, Pika Labs, MiniMax, ByteDance, Alibaba Cloud, Tencent, Lightricks; corroborated via TechCrunch, CNN, DataCamp, WaveSpeedAI, Pinggy.*
