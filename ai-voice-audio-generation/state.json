@@ -1,0 +1,35 @@
+{
+  "topic": "ai-voice-audio-generation",
+  "created": "2026-03-18T00:00:00Z",
+  "last_updated": "2026-03-18T14:28:49Z",
+  "current_hypothesis": "ElevenLabs leads commercial TTS/voice cloning market as of March 2026; Cartesia leads for real-time latency; Suno/Udio dominate AI music but face ongoing legal transitions post-RIAA settlements; open-source options (Kokoro, XTTS-v2) are maturing rapidly; legal landscape is crystallizing with new disclosure laws and state right-of-publicity protections.",
+  "open_questions": [
+    "UMG v Suno fair use ruling expected summer 2026 - will it reshape the market?",
+    "Germany GEMA v Suno ruling June 12 2026",
+    "OpenAI next-gen audio model launch - capabilities vs ElevenLabs v3?",
+    "ForgeFoley Q1 2026 launch - will it disrupt professional foley workflows?"
+  ],
+  "tried": [
+    "Web search: ElevenLabs, PlayHT, Murf pricing comparison 2026",
+    "Web search: Cartesia, LMNT, Hume AI, OpenAI TTS 2026",
+    "Web search: AI voice cloning tools quality and pricing 2026",
+    "Web search: Suno, Udio AI music features and pricing 2026",
+    "Web search: AI sound effects and foley tools 2026",
+    "Web search: Open source TTS models 2026 (Kokoro, XTTS-v2, StyleTTS, Chatterbox)",
+    "Web search: AI voice legal issues and consent 2026",
+    "Web search: AI music copyright licensing Suno Udio lawsuits 2026",
+    "Web search: ElevenLabs new features v3 dubbing studio 2026",
+    "Web search: AI voice quality comparison for use cases 2026",
+    "Web search: New AI audio tools early 2026",
+    "Web search: Meta MusicGen AudioCraft 2026",
+    "Web search: Fish Audio, WellSaid, Speechify, Resemble AI pricing 2026",
+    "Web search: AI voice disclosure laws FTC regulations 2026"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Monitor UMG v Suno ruling (summer 2026)",
+    "Monitor GEMA v Suno ruling (June 12, 2026)",
+    "Track OpenAI audio model launch",
+    "Re-evaluate open-source landscape as Chatterbox and Dia mature"
+  ]
+}
