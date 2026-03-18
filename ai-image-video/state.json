@@ -1,34 +1,27 @@
 {
   "topic": "ai-image-video",
-  "created": "2026-03-18T14:25:25Z",
-  "last_updated": "2026-03-18T14:28:50Z",
-  "current_hypothesis": "AI video generation has crossed a quality threshold for short-form marketing content in 2026, with native audio now standard; the gap between proprietary and open-source is narrowing fast",
+  "created": "2026-03-18T00:00:00Z",
+  "last_updated": "2026-03-18T14:41:47Z",
+  "current_hypothesis": "The AI content creation stack has matured to the point where a solo creator or small team can produce broadcast-quality multimedia at 95%+ cost savings. The field has bifurcated into cloud SaaS and local open-source stacks. Native audio is now table stakes in video. Legal risk (copyright, voice cloning, AI music) is the primary non-technical blocker for commercial adoption.",
   "open_questions": [
-    "How does Seedance 2.0 global rollout resolve after copyright pause?",
-    "Will Veo 3.1 4K output hold quality in practice vs benchmark?",
-    "Which tool wins for consistent brand character across long campaigns?"
+    "How will UMG v. Suno (summer 2026) reshape AI music licensing?",
+    "When does Seedance 2.0 global rollout resume post-pause?",
+    "How do entertainment studios (Netflix, streamers) use AI internally?",
+    "Real engagement rate comparison: AI-generated vs human-created content?",
+    "Optimal ComfyUI workflow for consistent brand character across multi-video campaign?"
   ],
   "tried": [
-    "web_search: top tools comparison 2026",
-    "web_search: pricing and API costs",
-    "web_search: open source models",
-    "web_search: Sora 2 capabilities",
-    "web_search: Veo 3.1 features",
-    "web_search: Kling 2.0/2.5/2.6",
-    "web_search: Runway Gen-4.5",
-    "web_search: Hailuo/Pika/Luma Ray3",
-    "web_search: AI video limitations 2026",
-    "web_search: marketing use cases",
-    "web_search: new 2026 launches Seedance ByteDance",
-    "web_search: Wan 2.1/2.2 specs",
-    "web_search: text-to-video vs image-to-video",
-    "web_fetch: pinggy.io best models overview",
-    "web_fetch: wavespeed.ai comparison guide"
+    "Web research: AI image generation tools, pricing, open source, best practices (March 2026)",
+    "Web research: AI video generation tools, capabilities, limitations (March 2026)",
+    "Web research: AI voice and audio tools, cloning, music generation (March 2026)",
+    "Web research: AI content workflows, platforms, costs, distribution (March 2026)"
   ],
   "blockers": [],
   "next_steps": [
-    "Generate research report",
-    "Optionally: benchmark specific tools for marketing ad use case",
-    "Monitor Seedance 2.0 global launch status"
+    "Deep-dive ComfyUI setup for local generation pipeline",
+    "Benchmark API cost per minute of video across top tools",
+    "Research entertainment industry internal AI adoption (Netflix, studios)",
+    "Monitor UMG v. Suno ruling (summer 2026)",
+    "Monitor Seedance 2.0 global rollout resumption"
   ]
 }
