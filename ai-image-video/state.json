@@ -1,0 +1,34 @@
+{
+  "topic": "ai-image-video",
+  "created": "2026-03-18T14:25:25Z",
+  "last_updated": "2026-03-18T14:28:50Z",
+  "current_hypothesis": "AI video generation has crossed a quality threshold for short-form marketing content in 2026, with native audio now standard; the gap between proprietary and open-source is narrowing fast",
+  "open_questions": [
+    "How does Seedance 2.0 global rollout resolve after copyright pause?",
+    "Will Veo 3.1 4K output hold quality in practice vs benchmark?",
+    "Which tool wins for consistent brand character across long campaigns?"
+  ],
+  "tried": [
+    "web_search: top tools comparison 2026",
+    "web_search: pricing and API costs",
+    "web_search: open source models",
+    "web_search: Sora 2 capabilities",
+    "web_search: Veo 3.1 features",
+    "web_search: Kling 2.0/2.5/2.6",
+    "web_search: Runway Gen-4.5",
+    "web_search: Hailuo/Pika/Luma Ray3",
+    "web_search: AI video limitations 2026",
+    "web_search: marketing use cases",
+    "web_search: new 2026 launches Seedance ByteDance",
+    "web_search: Wan 2.1/2.2 specs",
+    "web_search: text-to-video vs image-to-video",
+    "web_fetch: pinggy.io best models overview",
+    "web_fetch: wavespeed.ai comparison guide"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Generate research report",
+    "Optionally: benchmark specific tools for marketing ad use case",
+    "Monitor Seedance 2.0 global launch status"
+  ]
+}
