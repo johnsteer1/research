@@ -1,27 +1,34 @@
 {
   "topic": "ai-image-video",
   "created": "2026-03-18T00:00:00Z",
-  "last_updated": "2026-03-18T14:41:47Z",
-  "current_hypothesis": "The AI content creation stack has matured to the point where a solo creator or small team can produce broadcast-quality multimedia at 95%+ cost savings. The field has bifurcated into cloud SaaS and local open-source stacks. Native audio is now table stakes in video. Legal risk (copyright, voice cloning, AI music) is the primary non-technical blocker for commercial adoption.",
+  "last_updated": "2026-03-25T14:39:30Z",
+  "current_hypothesis": "The AI content stack has matured to the point where a solo creator or small team can produce broadcast-quality multimedia at 95%+ cost savings. Key March 2026 shifts: LTX 2.3 is the new OSS video leader (5.7x faster, 4K+audio, Apache 2.0); character consistency is now achievable via Identity-Lock + LoRA; ComfyUI App Mode democratizes local workflows for non-technical users. Legal: EU AI Act deadline Aug 2 2026; California transparency laws in effect.",
   "open_questions": [
-    "How will UMG v. Suno (summer 2026) reshape AI music licensing?",
+    "How will UMG v. Suno (summer 2026) and GEMA v. Suno (June 12) reshape AI music licensing?",
     "When does Seedance 2.0 global rollout resume post-pause?",
-    "How do entertainment studios (Netflix, streamers) use AI internally?",
+    "LTX 2.3 vs Wan 2.2 for complex camera control \u2014 does VACE 2.0 still give Wan 2.2 the edge?",
+    "Adobe Firefly Custom Models beta \u2014 max resolution, training time, cost structure at scale?",
+    "How do entertainment studios (Netflix, streamers) use AI content creation internally?",
     "Real engagement rate comparison: AI-generated vs human-created content?",
-    "Optimal ComfyUI workflow for consistent brand character across multi-video campaign?"
+    "Optimal batch generation workflow using BFL API vs fal.ai for 2000-credit/month Flux budget?"
   ],
   "tried": [
     "Web research: AI image generation tools, pricing, open source, best practices (March 2026)",
     "Web research: AI video generation tools, capabilities, limitations (March 2026)",
     "Web research: AI voice and audio tools, cloning, music generation (March 2026)",
-    "Web research: AI content workflows, platforms, costs, distribution (March 2026)"
+    "Web research: AI content workflows, platforms, costs, distribution (March 2026)",
+    "Researched Flux 2 BFL API: endpoints, credits, pricing, Python integration, ComfyUI nodes (March 2026)",
+    "Web research: latest AI image/video developments March 15-22 2026",
+    "Deep research: LTX 2.3 vs Wan 2.2, character consistency/Identity-Lock, ComfyUI App Mode+ComfyHub, Kling 3.0, Adobe Firefly Custom Models, legal updates (March 2026)"
   ],
   "blockers": [],
   "next_steps": [
-    "Deep-dive ComfyUI setup for local generation pipeline",
-    "Benchmark API cost per minute of video across top tools",
-    "Research entertainment industry internal AI adoption (Netflix, studios)",
-    "Monitor UMG v. Suno ruling (summer 2026)",
-    "Monitor Seedance 2.0 global rollout resumption"
+    "Build Python batch generation script using BFL API or fal-client",
+    "Set up ComfyUI bfl-comfy-nodes for API-backed Flux workflow",
+    "Test LTX 2.3 vs Wan 2.2 locally for OSS video pipeline",
+    "Evaluate Adobe Firefly Custom Models beta for brand character consistency",
+    "Monitor UMG v. Suno (summer 2026) and GEMA v. Suno (June 12)",
+    "Monitor Seedance 2.0 global rollout resumption",
+    "Deep-dive entertainment industry internal AI adoption (Netflix, studios)"
   ]
 }
