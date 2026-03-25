@@ -70,7 +70,7 @@ The AI content creation stack has reached a commercial inflection point. A solo 
 
 ### Commercial Licensing
 - **Adobe Firefly** is the only platform offering explicit IP **indemnification** for enterprise clients — trained on licensed Adobe Stock. Over 40% of professional designers cite copyright ambiguity as reason to avoid other tools for paid client work.
-- **Adobe Firefly Custom Models** (public beta, March 2026) — train on your own images for brand character/style consistency; most commercially-safe path for consistent branded output
+- **Adobe Firefly Custom Models** (public beta March 19, 2026) — train on 10–30 of your own images in 30min–2hrs for 500 generative credits; image-only (not video yet); most commercially-safe path for consistent brand output; use Model Score >85 as quality threshold
 - **Midjourney** offers commercial rights on paid plans but no indemnification; ongoing training-data lawsuits
 - **FLUX.1 [schnell]** is Apache 2.0 — most permissive open-source commercial option
 - **SD 3.5** is free for commercial use under $1M annual revenue
@@ -149,13 +149,13 @@ print(result["images"][0]["url"])
 |------|-----------|-----------|-------------|---------|
 | **Runway Gen-4.5** | 1080p | ~60s w/ multi-shot | No (soon) | #1 benchmark; cinematic quality, character consistency |
 | **Google Veo 3.1** | **4K native** | 8s clip / 60s+ w/ Scene Ext | Yes | TV-quality 4K, vertical content, multi-image reference |
-| **Kling 3.0** (Kuaishou) | 1080p | **2 minutes** | Yes | Longest clips, identity-lock character system, multilingual lip-sync |
+| **Kling 3.0** (Kuaishou) | **4K/60fps** | 15s/clip + multi-shot | Yes | Native 4K, identity-lock, Motion Brush, multi-shot storyboarding, multilingual lip-sync |
 | **OpenAI Sora 2** | 1080p | 25s | Yes | Cinematic, Disney partnership, strong API |
 | **Luma Ray3.14** | 4K HDR | ~10s | No | Hi-Fi Diffusion tech; production-ready 4K; natural motion |
 | **Pika 2.5** | 1080p | ~10s | Limited | Most intuitive UI, object replacement, social |
 | **Hailuo 2.3** (MiniMax) | 1080p | 10s | No | Best cost-effectiveness, micro-expressions |
 | **Seedance 2.0** (ByteDance) | 2K/60fps | ~15s | Yes | 🚨 Global launch paused Mar 15, 2026; ~100x cheaper than Sora |
-| **Helios** (PKU/ByteDance/Canva) | 1080p | **60s at 24fps** | — | 14B params; single H100; new March 2026 entrant |
+| **Helios** (PKU/ByteDance/Canva) | 384×640 | **60s+ at 19.5fps** | No | 14B params; single H100; 3-step distilled; Apache 2.0; March 4 2026 |
 
 ### Pricing
 
@@ -163,7 +163,7 @@ print(result["images"][0]["url"])
 |------|-----------|------------|-------------|
 | Runway Gen-4.5 | Yes (watermarked) | $12/mo | ~$0.05 (Gen-4 Turbo) |
 | Veo 3.1 | Limited (AI Studio) | $19.99/mo (Gemini Adv) | Vertex AI enterprise |
-| Kling 3.0 | Yes | ~$14.99/mo | Via API partners |
+| Kling 3.0 | Yes (66 credits/day) | $6.99/mo (Standard) / $29.99/mo (Pro) / $59.99/mo (Ultra) | ~$0.084–0.168/sec |
 | Sora 2 | **No** (removed Jan 10, 2026) | $20/mo (Plus) | $0.10–$0.50 |
 | Luma Ray3.14 | Yes | $7.99/mo | — |
 | Pika 2.5 | Yes (watermarked) | $8/mo | — |
@@ -176,22 +176,23 @@ print(result["images"][0]["url"])
 
 | Model | Params | License | Key Specs |
 |-------|--------|---------|----------|
-| **LTX 2.3** (Lightricks) | 22B | Apache 2.0 ✅ | **5.7x faster than Wan 2.2** on RTX 5090; native 4K + synchronized audio in single pass; licensed training data (Getty/Shutterstock); NVFP4 support coming |
-| **Wan 2.2** (Alibaba) | ~10B MoE | Apache 2.0 ✅ | 1080p, 8.19GB VRAM min, VACE 2.0 camera control; 2.2M+ downloads; proven ecosystem |
+| **LTX 2.3** (Lightricks) | 22B | Apache 2.0 ✅ | **5.7x faster than Wan 2.2** on RTX 5090 (22s vs 125s I2V); native 4K + audio in single DiT pass; 24GB VRAM min (1080p), 48GB+ for 4K; licensed training data (Getty/Shutterstock); NVFP4 coming |
+| **Wan 2.2** (Alibaba) | ~10B MoE | Apache 2.0 ✅ | 1080p, 8.19GB VRAM min, VACE 2.0 camera control; 2.2M+ downloads; **still leads on organic human motion quality and complex prompt faithfulness** |
 | **HunyuanVideo 1.5** (Tencent) | 8.3B | Open | 96.4% quality benchmark; needs 13.6GB VRAM |
 | **CogVideoX-5B** | 5B | Open | Lightweight, 720p, 6s, moderate hardware |
 
 **OSS Video Recommendation (updated March 2026):**
-- **LTX 2.3** is the new performance leader — 5.7x faster, native 4K+audio, Apache 2.0, trained on licensed data (safest commercially). Ideal for RTX 4090/5090 setups.
-- **Wan 2.2** remains the safer choice for proven production workflows — broader ComfyUI ecosystem, more community support, battle-tested VACE 2.0 camera control.
-- Run both if you have the GPU — LTX 2.3 for speed, Wan 2.2 for complex camera work.
+- **LTX 2.3** is the new speed/capability leader — 5.7x faster, native 4K+audio in one pass, Apache 2.0, licensed training data (safest commercially). Requires 24GB VRAM min (1080p) or 48GB+ for native 4K.
+- **Wan 2.2** still leads on organic human motion quality and complex prompt faithfulness — better for character/lifestyle videos. Lighter footprint (8GB VRAM min). Broader ComfyUI ecosystem.
+- **Helios** (14B, Apache 2.0): best for long-form video (60s+) on H100-class hardware; 19.5fps distilled, no audio, lower resolution (384×640). Research/experimental use for now.
+- **Rule of thumb:** LTX 2.3 for speed + audio; Wan 2.2 for motion quality + camera control; run both if GPU allows.
 
 ### Quality Rankings
 
 - **Best cinematic physics:** Runway Gen-4.5 > Sora 2 > Luma Ray3.14
 - **Best human faces/movement:** Kling 3.0 > Hailuo 2.3 > Sora 2
-- **Best resolution:** Veo 3.1 (4K native) > LTX 2.3 (4K OSS) > Luma Ray3.14 (4K HDR)
-- **Longest clips:** Kling 3.0 (2 min) > Helios (60s) > Veo 3.1 w/ Scene Extension (60s+) > Sora 2 (25s)
+- **Best resolution:** Veo 3.1 (4K native) > Kling 3.0 (4K/60fps) > LTX 2.3 (4K OSS, needs 48GB VRAM) > Luma Ray3.14 (4K HDR)
+- **Longest clips per gen:** Helios (60s+, OSS) > Veo 3.1 w/ Scene Extension (60s+) > Sora 2 (25s) > Kling 3.0 (15s/clip, but multi-shot storyboarding) > Kling 2.6 (2 min extended mode)
 - **Best scene/character consistency:** Runway Gen-4.5 > Kling 3.0 > Veo 3.1
 - **Best native audio:** Sora 2, Veo 3.1, Kling 3.0, Seedance 2.0 (all one-pass generation)
 
@@ -213,7 +214,7 @@ Market split: T2V ~65.7% of all generations; I2V ~32.6%. Experienced creators gr
 
 **Status:** Gone from "nearly impossible" to "surprisingly achievable" — but not solved.
 
-**Identity-Lock™ systems** now appear in multiple platforms: Seedance 2.0, Kling 3.0, and Runway Gen-4.5 all launched character persistence features within weeks of each other in early 2026. Modern systems can achieve **95%+ frame-level consistency** for most use cases with proper reference management.
+**Identity-Lock™ systems** now appear in multiple platforms: Seedance 2.0, Kling 3.0, and Runway Gen-4.5 all launched character persistence features within weeks of each other in early 2026. Modern systems can achieve **95%+ frame-level consistency** for most use cases with proper reference management. Kling 3.0 adds **multi-shot storyboarding** — generate 3–15 second sequences with consistent characters across different camera angles, effectively replacing the extended clip length approach with a more cinematic shot-based workflow.
 
 **Best practice workflow for multi-video brand campaigns:**
 1. **Reference design phase:** Establish character with 5–10 reference images covering different poses, angles, and lighting
@@ -434,7 +435,7 @@ Key capabilities: AI produces 50 copy variants vs 5 human; platforms test hundre
 
 ### Image Copyright
 - **Adobe Firefly** indemnifies enterprise clients — only tool trained on licensed Adobe Stock
-- **Adobe Firefly Custom Models** (public beta March 2026) — train on your own images; fully indemnified; best path for brand character consistency in client work
+- **Adobe Firefly Custom Models** (public beta March 19, 2026) — upload 10–30 images, train in 30min–2hrs for 500 generative credits; image-only (video not yet supported); fully indemnified; best path for brand character consistency in client work; Model Score >85 indicates quality training set
 - Midjourney, FLUX, SD have ongoing/potential training-data disputes; no indemnification
 - **LTX 2.3** trained on licensed Getty/Shutterstock data — strongest copyright position among OSS video models
 - 40%+ of designers cite copyright ambiguity as reason to avoid non-Firefly tools for client work
@@ -560,7 +561,7 @@ Key capabilities: AI produces 50 copy variants vs 5 human; platforms test hundre
 
 2. **No single tool does everything.** The best results come from chaining specialized tools. Master the pipeline, not just one app.
 
-3. **Open source is production-ready.** FLUX.1 [schnell] (images, Apache 2.0) and LTX 2.3 (video, Apache 2.0, 5.7x faster than Wan 2.2) are the new OSS leaders. Both run on consumer GPUs.
+3. **Open source is production-ready.** FLUX.1 [schnell] (images, Apache 2.0) and LTX 2.3 (video, Apache 2.0, 5.7x faster than Wan 2.2, native 4K+audio) are the new OSS leaders. LTX 2.3 needs 24GB VRAM min; Wan 2.2 runs on 8GB and still leads on human motion quality.
 
 4. **Legal is the real moat.** Adobe Firefly is the only legally indemnified image tool. LTX 2.3 is the safest OSS video option (licensed training data). AI music licensing is in flux until summer 2026 rulings. Voice cloning has federal and state law exposure.
 
@@ -585,7 +586,7 @@ Key capabilities: AI produces 50 copy variants vs 5 human; platforms test hundre
 3. How do entertainment studios (Netflix, major streamers) use AI content creation internally?
 4. Real engagement rate data: AI-generated vs human-created content — does quality gap show in performance?
 5. LTX 2.3 vs Wan 2.2 for complex camera control workflows — does VACE 2.0 still give Wan 2.2 the edge?
-6. Adobe Firefly Custom Models beta — what's the max resolution, training time, and cost structure at scale?
+6. Adobe Firefly Custom Models (image-only beta) — when does video support arrive? What's the quality ceiling for brand character consistency vs LoRA fine-tuning on OSS models?
 7. What is optimal batch generation workflow using BFL API vs fal.ai for a 2000-credit/month Flux budget?
 
 ---
